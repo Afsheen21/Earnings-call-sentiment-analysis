@@ -1,0 +1,6 @@
+archive.zip
+motley-fool-data.pkl
+.env
+data/raw_prices/
+__pycache__/
+*.pyc
