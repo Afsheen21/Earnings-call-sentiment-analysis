@@ -1,5 +1,7 @@
 # Does Earnings Call Sentiment Predict Stock Price Movement?
 
+![Project Thumbnail](data/thumbnail.jpeg)
+
 I wanted to test something I'd always wondered about: when a CEO sounds 
 upbeat on an earnings call, does that actually mean anything for the stock 
 price afterward? Or is it just noise?
@@ -85,3 +87,5 @@ Run locally with:
 pip install -r requirements.txt
 
 streamlit run app.py
+
+[def]: data/thumbnail.jpeg
