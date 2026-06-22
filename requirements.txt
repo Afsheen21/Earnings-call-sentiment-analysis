@@ -1,0 +1,5 @@
+streamlit
+vaderSentiment
+pandas
+yfinance
+matplotlib
