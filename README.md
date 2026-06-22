@@ -76,3 +76,9 @@ makes it hard to find a pattern even if one exists.
 ## Tools
 
 Python, pandas, yfinance, VADER (NLTK), matplotlib
+
+
+## Try it yourself
+This includes a simple Streamlit app where you can paste any earnings call text and see its sentiment score. Run locally with:
+pip install -r requirements.txt
+streamlit run app.py
