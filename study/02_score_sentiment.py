@@ -23,10 +23,19 @@ from tqdm import tqdm
 TRANSCRIPTS = "data/filtered_transcripts_clean.csv"
 OUT = "data/sentiment_scores.csv"
 QA_MARK = re.compile(r"question[\s\-–]*and[\s\-–]*answer|questions?\s*(?:&|and)\s*answers?|\bQ\s*&\s*A\b", re.I)
+# A heading that sits on a LINE OF ITS OWN ("Questions & Answers:"). This is reliable anywhere in the
+# text, including early: some companies (e.g. Chevron, Exxon) have short prepared remarks and a long
+# Q&A, so the heading can be inside the first 15% of the transcript.
+QA_HEADING = re.compile(r"^[ \t]*(?:questions?\s*(?:&|and)\s*answers?|q\s*&\s*a)[ \t]*:?[ \t]*\r?$", re.I | re.M)
 
 
 def split_sections(text):
     """Return {'all','prep','qa'} text. qa is None if no Q&A marker is found."""
+    # 1) a standalone heading line, at least 300 characters in (so prepared remarks are not empty)
+    for h in QA_HEADING.finditer(text):
+        if h.start() > 300:
+            return {"all": text, "prep": text[:h.start()], "qa": text[h.start():]}
+    # 2) fallback (previous rule): first marker after the first 15% of the text
     m = QA_MARK.search(text, int(len(text) * 0.15))
     if m is None:
         return {"all": text, "prep": None, "qa": None}
