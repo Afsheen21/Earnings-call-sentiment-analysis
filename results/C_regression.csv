@@ -1,0 +1,4 @@
+method,coef_sentiment_z,p_value,r2_baseline,r2_with_sentiment
+vader,0.314,0.6348,0.0582,0.0635
+lm,0.682,0.1573,0.0582,0.0821
+finbert,0.1576,0.759,0.0582,0.0594

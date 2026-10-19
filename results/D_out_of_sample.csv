@@ -1,0 +1,4 @@
+method,n_test,mse_baseline,mse_with_sentiment,mean_improvement,ci_low,ci_high
+vader,44,39.4801,39.6424,-0.1623,-1.1979,0.913
+lm,44,39.4801,41.9369,-2.4567,-6.2971,1.0789
+finbert,44,39.4801,40.4371,-0.957,-2.1614,0.1228

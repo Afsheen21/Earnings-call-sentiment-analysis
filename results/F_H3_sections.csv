@@ -1,0 +1,7 @@
+method,part,n,spearman_rho_abs_ret
+vader,prep,139,-0.1348
+vader,qa,139,0.1768
+lm,prep,139,0.2595
+lm,qa,139,0.4318
+finbert,prep,139,0.2622
+finbert,qa,139,0.2197
